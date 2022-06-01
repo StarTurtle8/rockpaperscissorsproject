@@ -1,6 +1,6 @@
 function computerPlay() {
     let rng = Math.random();
-    if (rng > .666) {
+    if (rng > .667) {
         return "scissors"
     }
     else if (rng < .333) {
