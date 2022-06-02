@@ -48,10 +48,10 @@ function game(choice, cpuChoice) {
         console.log(cInput)
         aiScore++
         fightArea.style.textAlign = "center"
-        fightArea.textContent = "Computer's " + cInput + " beats your " + pInput
+        fightArea.textContent = "Computer Win! Computer's " + cInput + " beats your " + pInput
         cpuScore.textContent = "Computer Score: " + aiScore
         if (aiScore === 5) {
-            winArea.textContent = "Computer wins! \n"
+            winArea.textContent = "Computer wins the match! \n"
             const playAgain = document.createElement("button");
             playAgain.textContent = "Play again?";
             playAgain.addEventListener('click', reload, false);
@@ -67,10 +67,10 @@ function game(choice, cpuChoice) {
         console.log(cInput)
         humanScore++
         fightArea.style.textAlign = "center"
-        fightArea.textContent = "Your " + pInput + " beats " + "Computer's "+ cInput
+        fightArea.textContent = "Your win! Your " + pInput + " beats " + "Computer's "+ cInput
         playerScore.textContent = "Player Score: " + humanScore
         if (humanScore === 5 ){
-            winArea.textContent = "You win! \n"
+            winArea.textContent = "You win the match! \n"
             const playAgain = document.createElement("button");
             playAgain.textContent = "Play again?";
             playAgain.addEventListener('click', reload, false);
@@ -84,7 +84,7 @@ function game(choice, cpuChoice) {
     else if (cInput === pInput) {
             console.log(cInput)
             fightArea.style.textAlign = "center"
-            fightArea.textContent = pInput + " ties with " + cInput
+            fightArea.textContent = "Draw! " + pInput + " ties with " + cInput
         }
     
 }
