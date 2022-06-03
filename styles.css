@@ -21,8 +21,17 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 
+}
+.playerScore, .cpuScore {
+    border-style: solid;
+    border-color: black;
+    border-radius: 25px;
+    padding: 10px;
+}
 .fightArea {
     display: flex;
     justify-content: center;
@@ -36,8 +45,15 @@ img {
     justify-content: center;
     align-items: center;
     text-align: center;
-}
+    margin: 30px;
+    font-size: 30px;
 
+}
+button {
+    margin-top: 30px;
+    font-size: 10px;
+    color: darkgreen;
+}
 .header {
     display: flex;
     text-align: center;
@@ -50,6 +66,6 @@ img {
 
 }
 .gameChoices img {
-    height: 350px;
+    height: 300px;
     width: auto;
 }
