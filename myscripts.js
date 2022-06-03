@@ -2,17 +2,18 @@ function computerPlay() {
     let rng = Math.floor((Math.random() * 3));
     // console.log(rng);
     if (rng === 0 ) {
-        return "scissors"
+        return "Scissors"
     }
     else if (rng === 1 ) {
-        return "rock"
+        return "Rock"
     }
     else {
-        return "paper"
+        return "Paper"
     }
 }
 
-const scoreArea = document.querySelector('scoreArea');
+const gameChoices = document.querySelector('.gameChoices')
+const scoreArea = document.querySelector('.scoreArea');
 const fightArea =document.querySelector('.fightArea');
 const winArea =document.querySelector('.winArea');
 const playerScore = document.querySelector('.playerScore');
@@ -22,19 +23,18 @@ function reload() {
     reload = location.reload();
 }
 
-
-const rockChoice = document.querySelector('#rockButton');
+const rockChoice = document.querySelector('.rockImage');
 rockChoice.addEventListener('click', () => {
-    game('rock', computerPlay());
+    game('Rock', computerPlay());
 })
-const paperChoice = document.querySelector('#paperButton');
+const paperChoice = document.querySelector('.paperImage');
 paperChoice.addEventListener('click', () => {
-    game('paper', computerPlay());
+    game('Paper', computerPlay());
 })
 
-const scissorsChoice = document.querySelector('#scissorsButton');
+const scissorsChoice = document.querySelector('.scissorsImage');
 scissorsChoice.addEventListener('click', () => {
-    game('scissors', computerPlay());
+    game('Scissors', computerPlay());
 })
 aiScore = 0;
 humanScore = 0;
@@ -42,9 +42,9 @@ humanScore = 0;
 function game(choice, cpuChoice) {
     pInput = choice
     cInput = cpuChoice
-    if ((pInput === "rock" && cInput === "paper") ||
-        (pInput === "paper" && cInput === "scissors") ||
-        (pInput === "scissors" && cInput === "rock")) {
+    if ((pInput === "Rock" && cInput === "Paper") ||
+        (pInput === "Paper" && cInput === "Scissors") ||
+        (pInput === "Scissors" && cInput === "Rock")) {
         console.log(cInput)
         aiScore++
         fightArea.style.textAlign = "center"
@@ -56,14 +56,15 @@ function game(choice, cpuChoice) {
             playAgain.textContent = "Play again?";
             playAgain.addEventListener('click', reload, false);
             winArea.appendChild(playAgain);
-            document.querySelectorAll('.gameChoices button').forEach(elem => {
-                elem.disabled = true; 
+            gameChoices.style.display = 'none';
+            document.querySelectorAll('.gameChoices .image').forEach(elem => {
+                elem.disabled = true;  
             })
         }
     }
-    else if ((pInput === "rock" && cInput === "scissors") ||
-             (pInput === "paper" && cInput === "rock") ||
-             (pInput === "scissors" && cInput === "paper")) {  
+    else if ((pInput === "Rock" && cInput === "Scissors") ||
+             (pInput === "Paper" && cInput === "Rock") ||
+             (pInput === "Scissors" && cInput === "Paper")) {  
         console.log(cInput)
         humanScore++
         fightArea.style.textAlign = "center"
@@ -75,9 +76,9 @@ function game(choice, cpuChoice) {
             playAgain.textContent = "Play again?";
             playAgain.addEventListener('click', reload, false);
             winArea.appendChild(playAgain);
-            document.querySelectorAll('.gameChoices button').forEach(elem => {
+            gameChoices.style.display = 'none';
+            document.querySelectorAll('.gameChoices .image').forEach(elem => {
                 elem.disabled = true;
-                
             })
         }
     } 
